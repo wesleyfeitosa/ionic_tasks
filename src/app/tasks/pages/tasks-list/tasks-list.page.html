@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title >Lista de Tarefas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list *ngIf="(tasks$ | async) as tasks">
+    
+    <ng-container *ngIf="tasks.length > 0; else noTasks">
+      <app-task-item *ngFor="let task of tasks" [task]="task"></app-task-item>
+    </ng-container>
+    
+    <ng-template #noTasks>
+      <ion-item lines="none">Nenhuma tarefa ainda...</ion-item>
+    </ng-template>
+    
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/tasks/create" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
