@@ -3,17 +3,18 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tasks"></ion-back-button>
     </ion-buttons>
-    <ion-title>Criar Tarefa</ion-title>
+    <ion-title>{{ pageTitle }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  
+<ion-content class="ion-padding">
+
   <form [formGroup]="taskForm" (submit)="onSubmit()">
     <ion-item>
       <ion-icon name="paper" slot="start" color="primary"></ion-icon>
       <ion-input type="text" placeholder="Title" autofocus="true" inputmode="text" formControlName="title">
       </ion-input>
+      <ion-toggle *ngIf="taskId" slot="end" color="primary" formControlName="done"></ion-toggle>
     </ion-item>
     <ion-button expand="full" type="submit" [disabled]="taskForm.invalid">
       Save
