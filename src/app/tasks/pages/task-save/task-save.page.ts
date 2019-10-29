@@ -63,7 +63,12 @@ export class TaskSavePage implements OnInit {
     });
     try {
       // a partir do método create de tasksService é criada a tarefa no banco
-      const task = await this.tasksService.create(this.taskForm.value);
+      const task = !this.taskId
+      ? await this.tasksService.create(this.taskForm.value)
+      : await this.tasksService.update({
+        id: this.taskId,
+        ...this.taskForm.value
+      })
       // depois da tarefa criada é feito o redirecionamento para página que lista as tarefas
       this.navController.navigateBack('/tasks');
     } catch (error) {

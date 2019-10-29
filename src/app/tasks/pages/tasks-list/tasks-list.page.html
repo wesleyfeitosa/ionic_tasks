@@ -1,21 +1,23 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title >Lista de Tarefas</ion-title>
+    <ion-title>Lista de Tarefas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
 
   <ion-list *ngIf="(tasks$ | async) as tasks">
-    
+
     <ng-container *ngIf="tasks.length > 0; else noTasks">
-      <app-task-item *ngFor="let task of tasks" [task]="task" (update)="onUpdate($event)"></app-task-item>
+      <app-task-item *ngFor="let task of tasks" [task]="task" (update)="onUpdate($event)" (delete)="onDelete($event)"
+        (done)="onDone($event)">
+      </app-task-item>
     </ng-container>
-    
+
     <ng-template #noTasks>
       <ion-item lines="none">Nenhuma tarefa ainda...</ion-item>
     </ng-template>
-    
+
   </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
