@@ -1,47 +1,55 @@
 <ion-content class="ion-padding">
 
-  <h1 class="ion-text-center">
-    <ion-icon name="done-all" color="primary" class="icon-7em"></ion-icon>
-  </h1>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-sm="8" size-md="4" size-lg="3" size-xl="3">
+        <h1 class="ion-text-center">
+          <ion-icon name="done-all" color="primary" class="icon-7em"></ion-icon>
+        </h1>
 
-  <form [formGroup]="authForm" (submit)="onSubmit(authProviders.Email)">
+        <form [formGroup]="authForm" (submit)="onSubmit(authProviders.Email)">
 
-    <ng-container *ngIf="!configs.isSignIn">
+          <ng-container *ngIf="!configs.isSignIn">
 
-      <ion-item>
-        <ion-icon name="person" color="primary" slot="start"></ion-icon>
-        <ion-input type="text" placeholder="Name" formControlName="name"></ion-input>
-        <ion-note slot="end" color="danger" *ngIf="name.dirty && name.hasError('required')">Required</ion-note>
-        <ion-note slot="end" color="danger" *ngIf="name.dirty && name.hasError('minlength')">Min 3 caracteres
-        </ion-note>
-      </ion-item>
+            <ion-item>
+              <ion-icon name="person" color="primary" slot="start"></ion-icon>
+              <ion-input type="text" placeholder="Name" formControlName="name"></ion-input>
+              <ion-note slot="end" color="danger" *ngIf="name.dirty && name.hasError('required')">Required</ion-note>
+              <ion-note slot="end" color="danger" *ngIf="name.dirty && name.hasError('minlength')">Min 3 caracteres
+              </ion-note>
+            </ion-item>
 
-    </ng-container>
+          </ng-container>
 
-    <ion-item>
-      <ion-icon name="mail" color="primary" slot="start"></ion-icon>
-      <ion-input type="email" placeholder="Email" formControlName="email" inputmode="email" autofocus="true">
-      </ion-input>
-      <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('required')">Required</ion-note>
-      <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('email')">Invalid Email</ion-note>
-    </ion-item>
+          <ion-item>
+            <ion-icon name="mail" color="primary" slot="start"></ion-icon>
+            <ion-input type="email" placeholder="Email" formControlName="email" inputmode="email" autofocus="true">
+            </ion-input>
+            <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('required')">Required</ion-note>
+            <ion-note slot="end" color="danger" *ngIf="email.dirty && email.hasError('email')">Invalid Email</ion-note>
+          </ion-item>
 
-    <ion-item>
-      <ion-icon name="lock" color="primary" slot="start"></ion-icon>
-      <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
-      <ion-note slot="end" color="danger" *ngIf="password.dirty && password.hasError('required')">Required</ion-note>
-      <ion-note slot="end" color="danger" *ngIf="password.dirty && password.hasError('minlength')">Min 6 caracteres
-      </ion-note>
-    </ion-item>
+          <ion-item>
+            <ion-icon name="lock" color="primary" slot="start"></ion-icon>
+            <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+            <ion-note slot="end" color="danger" *ngIf="password.dirty && password.hasError('required')">Required
+            </ion-note>
+            <ion-note slot="end" color="danger" *ngIf="password.dirty && password.hasError('minlength')">Min 6
+              caracteres
+            </ion-note>
+          </ion-item>
 
-    <ion-button expand="block" type="submit" [disabled]="authForm.invalid">{{ configs.action }}</ion-button>
+          <ion-button expand="block" type="submit" [disabled]="authForm.invalid">{{ configs.action }}</ion-button>
 
-  </form>
+        </form>
 
-  <ion-button expand="block" fill="clear" (click)="changeAuthAction()">{{ configs.actionChange }}</ion-button>
-  <ion-button expand="block" (click)="onSubmit(authProviders.Facebook)">
-    <ion-icon name="logo-facebook" slot="start" ></ion-icon>
-    Login with Facebook
-  </ion-button>
+        <ion-button expand="block" fill="clear" (click)="changeAuthAction()">{{ configs.actionChange }}</ion-button>
+        <ion-button expand="block" (click)="onSubmit(authProviders.Facebook)">
+          <ion-icon name="logo-facebook" slot="start"></ion-icon>
+          Login with Facebook
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

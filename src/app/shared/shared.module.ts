@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { MenuToggleComponent } from './components/menu-toggle/menu-toggle.component';
+import { LogoutButtonComponent } from './components/logout-button/logout-button.component';
 
 
 
 @NgModule({
   declarations: [
+    LogoutButtonComponent,
     MenuToggleComponent
   ],
   imports: [
@@ -17,7 +19,8 @@ import { MenuToggleComponent } from './components/menu-toggle/menu-toggle.compon
     CommonModule,
     ReactiveFormsModule,
     IonicModule,
-    MenuToggleComponent
+    MenuToggleComponent,
+    LogoutButtonComponent
   ]
 })
 export class SharedModule { }
