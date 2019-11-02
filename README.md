@@ -2,11 +2,13 @@
 
 Task management app is still under development and open for improvement by the community.
 
-## [DEMO](https://ionictasks-fc88b.web.app/)
+## [Demo](https://ionictasks-fc88b.web.app/)
 
 ## Screens
 
-![screen_01](https://user-images.githubusercontent.com/32942055/68076688-bbd91a80-fd96-11e9-9852-60c3ad9e3226.png) ![screen_02](https://user-images.githubusercontent.com/32942055/68076692-cd222700-fd96-11e9-9d88-96acb37eb37d.png) ![screen_03](https://user-images.githubusercontent.com/32942055/68076694-dad7ac80-fd96-11e9-87e0-05d394f5bcbd.png)
+![Screenshot_1](https://user-images.githubusercontent.com/32942055/68076885-779b4980-fd99-11e9-914f-9fefb1ea51d9.png)
+![Screenshot_2](https://user-images.githubusercontent.com/32942055/68076890-83870b80-fd99-11e9-802c-129c15f69eda.png)
+![Screenshot_3](https://user-images.githubusercontent.com/32942055/68076895-8e41a080-fd99-11e9-9a6f-f2099311fe25.png)
 
 ## Built With
 
